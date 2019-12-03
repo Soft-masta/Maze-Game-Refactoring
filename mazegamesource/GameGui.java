@@ -138,7 +138,12 @@ public class GameGui extends JFrame implements ActionListener
         }
         else if(e.getActionCommand().equals("SaveScore"))//allows the user to save their score at any time.
         {
-            hs.addHighScore(playerName,tk.getMinutes(),tk.getSeconds(),levelNum);
+            if(playerName == null){
+                JOptionPane optionPane = new JOptionPane();
+                playerName=optionPane.showInputDialog("Please Enter your Earth Name");
+            }else{
+                hs.addHighScore(playerName,tk.getMinutes(),tk.getSeconds(),levelNum);
+            }
         }
         else if(e.getActionCommand().equals("Open"))//to start the game you have to open a maze file. this is on the menu
         {
