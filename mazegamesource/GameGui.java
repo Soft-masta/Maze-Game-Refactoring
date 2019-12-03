@@ -154,32 +154,6 @@ public class GameGui extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-<<<<<<< Updated upstream
-        if (e.getActionCommand().equals("Exit"))//exit on the menu bar
-        {
-             new Timer(1000, updateCursorAction).stop();
-             System.exit(0); //exit the system.   
-        }
-        else if (e.getActionCommand().equals("New Game"))//new game on the menu bar
-        {
-            fl.loadFile("level1.maz");// load the file we need
-            theArc.setExit(fl.ExitXCord(), fl.ExitYCord());
-            loadMatrixGui("newLoad");
-        }//end New Game Command
-        else if(e.getActionCommand().equals("EnterName"))//Allows user to enter their name for high score
-        {
-               JOptionPane optionPane = new JOptionPane();
-               playerName=optionPane.showInputDialog("Please Enter your Earth Name");      
-        }
-        else if(e.getActionCommand().equals("HighScore"))//Displays the high scores
-        {
-            ScoreGui sg = new ScoreGui();
-            sg.ScoreGui();   
-        }
-        else if(e.getActionCommand().equals("SaveScore"))//allows the user to save their score at any time.
-        {
-            hs.addHighScore(playerName,tk.getMinutes(),tk.getSeconds(),levelNum);
-=======
         switch (e.getActionCommand()) {
         //exit on the menu bar
             case "Exit":
@@ -201,6 +175,10 @@ public class GameGui extends JFrame implements ActionListener
                 break;
         //allows the user to save their score at any time.
             case "SaveScore":
+                while (playerName == null){
+                    optionPane = new JOptionPane();
+                    playerName=optionPane.showInputDialog("Please Enter your Earth Name");
+                }
                 hs.addHighScore(playerName,tk.getMinutes(),tk.getSeconds(),levelNum);
                 break;
         //to start the game you have to open a maze file. this is on the menu
@@ -215,7 +193,6 @@ public class GameGui extends JFrame implements ActionListener
                 }   break;
             default:
                 break;
->>>>>>> Stashed changes
         }
      }//end actionPerformed method
      
