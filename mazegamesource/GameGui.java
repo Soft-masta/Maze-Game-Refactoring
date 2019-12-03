@@ -269,7 +269,7 @@ public class GameGui extends JFrame implements ActionListener
             //the game is over, here we must tell our high score method to recond the details.
             hs.addHighScore(playerName,tk.getMinutes(),tk.getSeconds(),levelNum);
             JFrame frame = new JFrame("Warning");
-            JOptionPane.showMessageDialog(frame, "You Stupid Ass, Did you eat to much for dinner?  Move Faster!");//the entire game has ended.
+            JOptionPane.showMessageDialog(frame, "You hit something");//the entire game has ended.
         }
     }//end class
     
