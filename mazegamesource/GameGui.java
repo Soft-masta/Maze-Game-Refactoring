@@ -138,7 +138,7 @@ public class GameGui extends JFrame implements ActionListener
         }
         else if(e.getActionCommand().equals("SaveScore"))//allows the user to save their score at any time.
         {
-            if(playerName == null){
+            while (playerName == null){
                 JOptionPane optionPane = new JOptionPane();
                 playerName=optionPane.showInputDialog("Please Enter your Earth Name");
             }
